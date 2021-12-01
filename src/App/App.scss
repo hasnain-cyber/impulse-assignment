@@ -1,0 +1,9 @@
+.app-right-content {
+  margin-left: 300px;
+}
+
+@media (max-width: 500px) {
+  .app-right-content {
+    margin-left: 0;
+  }
+}
