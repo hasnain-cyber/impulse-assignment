@@ -1,7 +1,7 @@
 import './App.scss'
 
 import React, {useState} from 'react';
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, useNavigate} from "react-router-dom";
 import Home from "../pages/Home/Home";
 import {Box, Drawer, List, ListItem, Typography} from "@mui/material";
 import HomeIcon from '@mui/icons-material/Home';
@@ -19,6 +19,8 @@ import Transactions from "../pages/Transactions/Transactions";
 
 function App() {
     const [openDrawer, setOpenDrawer] = useState(true);
+
+    const navigate = useNavigate()
 
     return (
         <>
@@ -55,7 +57,7 @@ function App() {
                             }}>
                             <HomeIcon sx={{color: '#53B9EA'}}/>
                             <Typography fontSize={15} color={'white'} fontFamily={'Prompt'}
-                                        textAlign={"center"}>Home</Typography>
+                                        textAlign={"center"} onClick={() => navigate('/')}>Home</Typography>
                         </ListItem>
                         <ListItem
                             sx={{
@@ -67,7 +69,8 @@ function App() {
                             }}>
                             <CompareArrowsIcon sx={{color: '#F05050'}}/>
                             <Typography fontSize={15} color={'white'} fontFamily={'Prompt'}
-                                        textAlign={"center"}>Transactions</Typography>
+                                        textAlign={"center"}
+                                        onClick={() => navigate('/transactions')}>Transactions</Typography>
                         </ListItem>
                         <ListItem
                             sx={{
